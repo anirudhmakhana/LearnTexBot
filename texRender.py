@@ -2,9 +2,12 @@ import requests
 import shutil
 
 HOST = 'https://rtex.probablyaweb.site'
+
 LATEX = r'''
 \documentclass{article}
+\usepackage{xcolor}
 \begin{document}
+\color{white}
 \pagenumbering{gobble}
 \section{Hello, World!}
 This is \LaTeX!

@@ -17,7 +17,6 @@ async def on_message(message):
 
     if message.content.startswith('!tex'):
       render_latex( LATEX, './out.png')
-      imageUtil('./out.png')
       await message.channel.send(file=discord.File('./out.png'))
 
 
