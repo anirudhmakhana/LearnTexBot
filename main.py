@@ -2,6 +2,7 @@ import os
 import discord
 from texRender import *
 from imageUtil import *
+from filterMessage import *
 
 client = discord.Client()
 
@@ -16,8 +17,10 @@ async def on_message(message):
         return
 
     if message.content.startswith('!tex'):
-      render_latex( LATEX, './out.png')
-      await message.channel.send(file=discord.File('./out.png'))
+      fullMessage = message.content
+      filterMessage(fullMessage)
+      #render_latex( LATEX, './out.png')
+      #await message.channel.send(file=discord.File('./out.png'))
 
 
 client.run(os.environ['TOKEN'])

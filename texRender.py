@@ -3,16 +3,7 @@ import shutil
 
 HOST = 'https://rtex.probablyaweb.site'
 
-LATEX = r'''
-\documentclass{article}
-\usepackage{xcolor}
-\begin{document}
-\color{white}
-\pagenumbering{gobble}
-\section{Hello, World!}
-This is \LaTeX!
-\end{document}
-'''
+
 
 def download_file(url, dest_filename):
 	response = requests.get(url, stream = True)
